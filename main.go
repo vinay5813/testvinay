@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unicode"
+)
 
 func isEven(n int) bool {
 	return n%2 == 0
@@ -8,6 +11,29 @@ func isEven(n int) bool {
 
 func add(a, b int) int {
 	return a + b
+}
+
+func checkString(s string) string {
+	if len(s) == 0 {
+		return "empty"
+	}
+	isNum := true
+	isAlnum := true
+	for _, ch := range s {
+		if !unicode.IsDigit(ch) {
+			isNum = false
+		}
+		if !unicode.IsLetter(ch) && !unicode.IsDigit(ch) {
+			isAlnum = false
+		}
+	}
+	if isNum {
+		return "numeric"
+	}
+	if isAlnum {
+		return "alphanumeric"
+	}
+	return "neither"
 }
 
 func main() {
@@ -24,4 +50,9 @@ func main() {
 
 	sum := add(10, 20)
 	fmt.Printf("Sum of 10 and 20 = %d\n", sum)
+
+	words := []string{"12345", "abc123", "hello", "!@#$"}
+	for _, w := range words {
+		fmt.Printf("%q is %s\n", w, checkString(w))
+	}
 }
