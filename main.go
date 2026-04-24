@@ -47,6 +47,7 @@ func main() {
 	fmt.Println("hello vinay how are you")
 	fmt.Println("hello SS")
 	fmt.Println("I am doing great, thanks for asking!")
+	fmt.Println("Welcome to testvinay - your Go playground!")
 
 
 	// Check even or odd for a list of numbers
