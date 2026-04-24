@@ -45,7 +45,9 @@ func checkString(s string) string {
 
 func main() {
 	fmt.Println("hello vinay how are you")
-	fmt.Println("hello")
+	fmt.Println("hello SS")
+	fmt.Println("I am doing great, thanks for asking!")
+
 
 	// Check even or odd for a list of numbers
 	numbers := []int{1, 2, 3, 4, 5}
